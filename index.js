@@ -29,8 +29,6 @@ function run(formula, outfile, cb){
     row.forEach(function(column, c){
       var t = c+Math.floor((width-row.length)/2);
       var position = new Victor(r*PADDING, t*PADDING);
-      // var position = new Victor(r*PADDING, c==0?0.5*(width-row.length)*PADDING: (width-row.length)*PADDING);
-      console.log(position);
       flat[column.id].position = position;
       flat[column.id].draw(canvas);
     });
@@ -40,8 +38,6 @@ function run(formula, outfile, cb){
     var n1 = flat[net.map[0].id];
     var n2 = flat[net.map[1].id];
     if(Gate.isGate(n1)&&Gate.isGate(n2)){
-      // console.log("test: " + n1);
-      // console.log(n2);
       var p1 = n1.positionOfNode(net.map[0].idl);
       var p2 = n2.positionOfNode(net.map[1].idl);
       canvas.stroke('#000000').strokeWidth(3).drawLine(p1.x, p1.y, p2.x, p2.y);
@@ -55,4 +51,3 @@ function run(formula, outfile, cb){
   canvas.stream('png').pipe(fs.createWriteStream(outfile)).on('finish', cb||()=>{});
 }
 module.exports = run;
-run('(A xor B) or (not B and C)', 'output.png');
