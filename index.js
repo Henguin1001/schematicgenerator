@@ -55,3 +55,4 @@ function run(formula, outfile, cb){
   canvas.stream('png').pipe(fs.createWriteStream(outfile)).on('finish', cb||()=>{});
 }
 module.exports = run;
+run('(A xor B) or (not B and C)', 'output.png');
