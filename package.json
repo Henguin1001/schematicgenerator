@@ -1,0 +1,19 @@
+{
+  "name": "imagelang",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henry Troutman",
+  "license": "ISC",
+  "dependencies": {
+    "arboreal": "0.0.2",
+    "gm": "^1.23.0",
+    "mathjs": "^3.9.2",
+    "pngjs": "^3.0.1",
+    "victor": "^1.1.0",
+    "xml2js": "^0.4.17"
+  }
+}
